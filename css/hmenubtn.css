@@ -1,0 +1,47 @@
+button {
+    background: transparent;
+    border: 1px solid var(--button-color, #000);
+    border-radius: 1rem;
+    display: none;
+}
+
+/* button one */
+
+.button-one {
+    --button-color: #333;
+}
+
+.button-one .line {
+    transition: y 300ms ease-in 300ms, rotate 300ms ease-in, opacity 0ms 300ms;
+    transform-origin: center;
+    -webkit-transition: y 300ms ease-in 300ms, rotate 300ms ease-in, opacity 0ms 300ms;
+    -moz-transition: y 300ms ease-in 300ms, rotate 300ms ease-in, opacity 0ms 300ms;
+    -ms-transition: y 300ms ease-in 300ms, rotate 300ms ease-in, opacity 0ms 300ms;
+    -o-transition: y 300ms ease-in 300ms, rotate 300ms ease-in, opacity 0ms 300ms;
+}
+
+.button-one[aria-expanded="true"] .line {
+    transition: y 300ms ease-in, rotate 300ms ease-in 300ms, opacity 0ms 300ms;
+}
+
+.button-one[aria-expanded="true"] :is(.top, .bottom) {
+    y: 45;
+}
+
+.button-one[aria-expanded="true"] .top {
+    rotate: 45deg;
+}
+
+.button-one[aria-expanded="true"] .middle {
+    opacity: 0;
+}
+
+.button-one[aria-expanded="true"] .bottom {
+    rotate: -45deg;
+}
+
+@media only screen and (max-width: 768px) {
+    button {
+        display: inline-block;
+    }
+}
